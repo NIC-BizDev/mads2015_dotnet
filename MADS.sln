@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloRIDB", "HelloRIDB\HelloRIDB.csproj", "{293B8447-9357-4DFB-97BE-8D3A541938A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NICBizDev.RIDB", "NICBizDev.RIDB\NICBizDev.RIDB.csproj", "{7F6AD55F-A250-4DFB-BC22-A76E46FFE573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NICBizDev.RIDB.Tests", "NICBizDev.RIDB.Tests\NICBizDev.RIDB.Tests.csproj", "{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{293B8447-9357-4DFB-97BE-8D3A541938A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{293B8447-9357-4DFB-97BE-8D3A541938A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{293B8447-9357-4DFB-97BE-8D3A541938A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6AD55F-A250-4DFB-BC22-A76E46FFE573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6AD55F-A250-4DFB-BC22-A76E46FFE573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6AD55F-A250-4DFB-BC22-A76E46FFE573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6AD55F-A250-4DFB-BC22-A76E46FFE573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
