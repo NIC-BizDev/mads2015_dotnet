@@ -10,17 +10,20 @@ namespace NICBizDev.RIDB
     [DataContract(Name="EntityLink")]
     public class RIDBEntityLink
     {
+        // RIDB BUG:  The EntityLinkID field is missing from the data dictionary
         [DataMember]
-        public string EntityType;
+        public int EntityLinkID { get; set; }
         [DataMember]
-        public int EntityID;
+        public string EntityType { get; set; }
         [DataMember]
-        public string LinkType;
+        public int EntityID { get; set; }
         [DataMember]
-        public string URL;
+        public string LinkType { get; set; }
         [DataMember]
-        public string Title;
+        public string URL { get; set; }
         [DataMember]
-        public string Description;
+        public string Title { get; set; }
+        [DataMember]
+        public string Description { get; set; }
     }
 }

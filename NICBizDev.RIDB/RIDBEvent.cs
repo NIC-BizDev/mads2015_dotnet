@@ -17,7 +17,7 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string EntityType { get; set; }
         [DataMember]
-        public int EventDataStewardID { get; set; }
+        public int? EventDataStewardID { get; set; }
         [DataMember]
         public string EventName { get; set; }
         [DataMember]
@@ -60,6 +60,9 @@ namespace NICBizDev.RIDB
         public string SponsorPhone { get; set; }
         [DataMember]
         public string SponsorClassType { get; set; }
+        // RIDB BUG:  LastUpdatedDate is missing from the data dictionary
+        [DataMember]
+        public DateTime? LastUpdatedDate { get; set; }
     }
         
 }

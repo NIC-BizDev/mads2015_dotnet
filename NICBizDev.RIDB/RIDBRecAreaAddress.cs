@@ -10,25 +10,31 @@ namespace NICBizDev.RIDB
     [DataContract(Name="RecAreaAddress")]
     public class RIDBRecAreaAddress
     {
+        // RIDB BUG : The AddressID and StreetAddress fields are missing the RecArea prefix in the documentation
         [DataMember]
-        public int AddressID;
+        public int RecAreaAddressID { get; set; }
         [DataMember]
-        public string StreetAddress1;
+        public string RecAreaStreetAddress1 { get; set; }
         [DataMember]
-        public string StreetAddress2;
+        public string RecAreaStreetAddress2 { get; set; }
         [DataMember]
-        public string StreetAddress3;
+        public string RecAreaStreetAddress3 { get; set; }
         [DataMember]
-        public string City;
+        public string City { get; set; }
         [DataMember]
-        public string AddressStateCode;
+        public string AddressStateCode { get; set; }
         [DataMember]
-        public string PostalCode;
+        public string PostalCode { get; set; }
         [DataMember]
-        public string AddressCountryCode;
+        public string AddressCountryCode { get; set; }
         [DataMember]
-        public int RecAreaID;
+        public int RecAreaID { get; set; }
         [DataMember]
-        public string RecAreaAddressType;
+        public string RecAreaAddressType { get; set; }
+        // RIDB BUG:  LastUpdatedDate is missing from the data dictionary
+        [DataMember]
+        public DateTime? LastUpdatedDate { get; set; }
+        // RIDB BUG:  The PostalCode field is documented as a string but returned as a float in certain instances
+        
     }
 }

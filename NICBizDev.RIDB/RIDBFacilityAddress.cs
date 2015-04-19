@@ -10,25 +10,26 @@ namespace NICBizDev.RIDB
     [DataContract(Name="FacilityAddress")]
     public class RIDBFacilityAddress
     {
+        // RIDB BUG:  Documentation says this field is named AddressId but it is FacilityAddressID, likewise for the 3 address line fields which are missing the prefix in the documentation
         [DataMember]
-        public int addressID { get; set; }
+        public int FacilityAddressID { get; set; }
         [DataMember]
-        public string streetAddress1 { get; set; }
+        public string FacilityStreetAddress1 { get; set; }
         [DataMember]
-        public string streetAddress2 { get; set; }
+        public string FacilityStreetAddress2 { get; set; }
         [DataMember]
-        public string streetAddress3 { get; set; }
+        public string FacilityStreetAddress3 { get; set; }
         [DataMember]
-        public string city { get; set; }
+        public string City { get; set; }
         [DataMember]
-        public string addressStateCode { get; set; }
+        public string AddressStateCode { get; set; }
         [DataMember]
-        public string postalCode { get; set; }
+        public string PostalCode { get; set; }
         [DataMember]
-        public string addressCountryCode { get; set; }
+        public string AddressCountryCode { get; set; }
         [DataMember]
-        public int facilityID { get; set; }
+        public int FacilityID { get; set; }
         [DataMember]
-        public string facilityAddressType { get; set; }
+        public string FacilityAddressType { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace NICBizDev.RIDB
     {
         [DataMember]
         public int RecAreaID { get; set; }
-        //[DataMember]
+        [IgnoreDataMember]
         public int? OrgRecAreaID { get; set; }
         [DataMember]
         public string RecAreaName { get; set; }
@@ -31,12 +31,24 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string RecAreaEmail { get; set; }
         [DataMember]
-        public string RecAreaLatitude { get; set; }
+        public double? RecAreaLatitude { get; set; }
         [DataMember]
-        public string RecAreaLongitude { get; set; }
+        public double? RecAreaLongitude { get; set; }
         [DataMember]
         public string Keywords { get; set; }
         [DataMember]
         public string StayLimit { get; set; }
+        // RIDB BUG:  LastUpdatedDate is missing from the data dictionary
+        [DataMember]
+        public DateTime LastUpdatedDate { get; set; }
+
+        // RIDB BUG:  The OrgRecAreaID field is documented as an integer but returned as a float in the JSON
+        [DataMember(Name="OrgRecAreaID")]
+        public float? OrgRecAreaIDFromJson
+        {
+            get { if (OrgRecAreaID.HasValue) return (float)OrgRecAreaID; else return null; }
+            set { if (value.HasValue) OrgRecAreaID = (int)value.Value; else OrgRecAreaID = null; }
+        }
     }
+
 }

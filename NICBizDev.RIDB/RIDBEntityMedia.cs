@@ -10,6 +10,9 @@ namespace NICBizDev.RIDB
     [DataContract(Name = "EntityMedia")]
     public class RIDBEntityMedia
     {
+        // RIDB BUG:  The MediaID is ommitted from the API documentation and is needed for the get method
+        [DataMember]
+        public int MediaID { get; set; }
         [DataMember]
         public string EntityType { get; set; }
         [DataMember]

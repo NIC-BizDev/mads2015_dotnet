@@ -24,5 +24,8 @@ namespace NICBizDev.RIDB
         public string OrgImageURL { get; set; }
         [DataMember]
         public string OrgJurisdictionType { get; set; }
+        // RIDB BUG:  LastUpdatedDate is missing from the data dictionary
+        [DataMember]
+        public DateTime? LastUpdatedDate { get; set; }
     }
 }

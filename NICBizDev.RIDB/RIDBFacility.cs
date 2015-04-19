@@ -12,8 +12,9 @@ namespace NICBizDev.RIDB
     {
         [DataMember]
         public int FacilityID { get; set; }
-        //[DataMember]
-        public int OrgFacilityID { get; set; }
+        // RIDB BUG: OrgFacilityID is documented as an integer, but has string data returned
+        [DataMember]
+        public string OrgFacilityID { get; set; }
         [DataMember]
         public string FacilityName { get; set; }
         [DataMember]
@@ -31,9 +32,9 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string FacilityReservationURL { get; set; }
         [DataMember]
-        public string FacilityLatitude { get; set; }
+        public double? FacilityLatitude { get; set; }
         [DataMember]
-        public string FacilityLongitude { get; set; }
+        public double? FacilityLongitude { get; set; }
         [DataMember]
         public string FacilityAdaAccess { get; set; }
         [DataMember]
@@ -44,5 +45,8 @@ namespace NICBizDev.RIDB
         public string Keywords { get; set; }
         [DataMember]
         public string StayLimit { get; set; }
+        // RIDB BUG:  LastUpdatedDate is missing from the data dictionary
+        [DataMember]
+        public DateTime LastUpdatedDate { get; set; }
     }
 }
