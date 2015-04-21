@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace NICBizDev.RIDB.Tests
 {
     [TestClass]
-    public class RecAreaTests
+    public class RecAreaTests : TestBase
     {
         [TestMethod]
         public void RecAreaGetAll()
@@ -225,11 +225,6 @@ namespace NICBizDev.RIDB.Tests
             var result = ridb.RecArea.GetActivity(440, 11);
 
             Assert.AreEqual(result.ActivityID, 11);
-        }
-
-        private RIDBClient GetClient()
-        {
-            return new RIDBClient("https://ridb.recreation.gov/api/v1", "0DFAFC81DDA348CF8EE20F3C60280535");
         }
     }
 }

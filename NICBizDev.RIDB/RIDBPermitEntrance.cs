@@ -23,9 +23,9 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string PermitEntranceAccesible { get; set; }
         [DataMember]
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
         [DataMember]
-        public double Longitude { get; set; }
+        public double? Longitude { get; set; }
         [DataMember]
         public string District { get; set; }
         [DataMember]
@@ -36,5 +36,11 @@ namespace NICBizDev.RIDB
         public DateTime CreatedDate { get; set; }
         [DataMember]
         public DateTime LastUpdatedDate { get; set; }
+        // RIDB BUG:  The data dictionary is missing the ATTRIBUTES member
+        [DataMember(Name = "ATTRIBUTES")]
+        public RIDBAttribute[] Attributes { get; set; }
+        // RIDB BUG:  The data dictionary is missing the ZONES member and no description of the Zone object is provided
+        [DataMember(Name = "ZONES")]
+        public RIDBPermitEntranceZone[] Zones { get; set; }
     }
 }

@@ -13,6 +13,10 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string EquipmentName { get; set; }
         [DataMember]
-        public int MaxLength { get; set; }
+        public int? MaxLength { get; set; }
+        // RIDB BUG:  The field PermittedEquipmentID is omitted from the data dictionary
+        [DataMember]
+        public int? PermittedEquipmentID { get; set; }
+
     }
 }

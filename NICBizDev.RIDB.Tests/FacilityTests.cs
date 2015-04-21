@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace NICBizDev.RIDB.Tests
 {
     [TestClass]
-    public class FacilityTests
+    public class FacilityTests : TestBase
     {
         [TestMethod]
         public void FacilityGetAll()
@@ -191,9 +191,58 @@ namespace NICBizDev.RIDB.Tests
             Assert.AreEqual(result.ActivityID, 11);
         }
 
-        private RIDBClient GetClient()
+        [TestMethod]
+        public void FacilityGetAllCampsites()
         {
-            return new RIDBClient("https://ridb.recreation.gov/api/v1", "0DFAFC81DDA348CF8EE20F3C60280535");
+            var ridb = GetClient();
+            var result = ridb.Facility.GetAllCampsites(233816);
+
+            Assert.IsTrue(result.Length > 0);
+        }
+
+        [TestMethod]
+        public void FacilitySearchCampsites()
+        {
+            var ridb = GetClient();
+            var result = ridb.Facility.SearchCampsites(233816, new RIDBSearchParameters() { Query = "group" });
+
+            Assert.IsTrue(result.Count > 0);
+        }
+
+        [TestMethod]
+        public void FacilityGetAllPermitEntrances()
+        {
+            var ridb = GetClient();
+            var result = ridb.Facility.GetAllPermitEntrances(233260);
+
+            Assert.IsTrue(result.Length > 0);
+        }
+
+        [TestMethod]
+        public void FacilitySearchPermitEntrances()
+        {
+            var ridb = GetClient();
+            var result = ridb.Facility.SearchPermitEntrances(233260, new RIDBSearchParameters() { Query = "ansel" });
+
+            Assert.IsTrue(result.Count > 0);
+        }
+
+        [TestMethod]
+        public void FacilityGetAllTours()
+        {
+            var ridb = GetClient();
+            var result = ridb.Facility.GetAllTours(233362);
+
+            Assert.IsTrue(result.Length > 0);
+        }
+
+        [TestMethod]
+        public void FacilitySearchTours()
+        {
+            var ridb = GetClient();
+            var result = ridb.Facility.SearchTours(233362, new RIDBSearchParameters() { Query = "twilight" });
+
+            Assert.IsTrue(result.Count > 0);
         }
     }
 }

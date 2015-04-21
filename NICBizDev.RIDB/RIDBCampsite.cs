@@ -26,7 +26,18 @@ namespace NICBizDev.RIDB
         public bool CampsiteAccesible { get; set; }
         [DataMember]
         public DateTime CreatedDate { get; set; }
+        // RIDB BUG:  In the data dictionary LastUpdatedDate is misnamed as LastUpdateDate
         [DataMember]
-        public DateTime LastUpdateDate { get; set; }
+        public DateTime LastUpdatedDate { get; set; }
+        // RIDB BUG:  The data dictionary is missing the ATTRIBUTES member
+        [DataMember(Name = "ATTRIBUTES")]
+        public RIDBAttribute[] Attributes { get; set; }
+        // RIDB BUG:  The data dictionary is missing the PERMITTEDEQUIPMENT member
+        [DataMember(Name = "PERMITTEDEQUIPMENT")]
+        public RIDBPermittedEquipment[] PermittedEquipment { get; set; }
+        // RIDB BUG:  The data dictionary is missing the ENTITYMEDIA member
+        [DataMember(Name = "ENTITYMEDIA")]
+        public RIDBEntityMedia[] Media { get; set; }
+
     }
 }

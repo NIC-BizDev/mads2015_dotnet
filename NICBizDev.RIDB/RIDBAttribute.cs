@@ -14,5 +14,8 @@ namespace NICBizDev.RIDB
         public string AttributeName { get; set; }
         [DataMember]
         public string AttributeValue { get; set; }
+        // RIDB BUG:  The AttributeID field is omitted from the data dictionary
+        [DataMember]
+        public int? AttributeID { get; set; }
     }
 }

@@ -24,9 +24,18 @@ namespace NICBizDev.RIDB
         public string TourDuration;
         [DataMember]
         public string TourAccessible;
-        //[DataMember]
-        public DateTime CreatedDate;
-        //[DataMember]
-        public DateTime LastUpdatedDate;
+        [DataMember]
+        public DateTime? CreatedDate;
+        [DataMember]
+        public DateTime? LastUpdatedDate;
+        // RIDB BUG:  The data dictionary is missing the ATTRIBUTES member
+        [DataMember(Name = "ATTRIBUTES")]
+        public RIDBAttribute[] Attributes { get; set; }
+        // RIDB BUG:  The data dictionary is missing the MEMBERTOURS member
+        [DataMember(Name = "MEMBERTOURS")]
+        public RIDBMemberTour[] MemberTours { get; set; }
+        // RIDB BUG:  The data dictionary is missing the ENTITYMEDIA member
+        [DataMember(Name = "ENTITYMEDIA")]
+        public RIDBEntityMedia[] Media { get; set; }
     }
 }
