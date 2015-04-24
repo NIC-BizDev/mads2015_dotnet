@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="48cbcade-22b3-47f0-8062-2b1f4d7b285e" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>The .NET RIDB Client API allows .NET systems and applications to effortlessly pull recreation information
+      from the RIDB without the complexity of interacting with the JSON RIDB API directly.  RIDB information is returned
+      as annotated .NET objects.</para>
+		</introduction>
+
+		<section>
+			<title>Using the RIDB Client API</title>
+      <content>
+        <para>
+          To use the RIDB Client API, you need to first instantiate the RIDBClient object.  The RIDB Client object requires
+          a couple of critical pieces of configuration.  The first is the base URL for the RIDB JSON API and the second is
+          the RIDB API Key to use when making requests to the RIDB API.  You may choose to either provide these programatically
+          through the constructor which accepts these as parameters or you can use the default constructor and have the
+          configuration information pulled from the environment (currently AppSettings are used).  Here are examples of
+          both methods for constructing the RIDBClient object.
+        </para>
+        <code language="cs">
+          // explicit configuration of client
+          RIDBClient ridb = new RIDBClient("https://ridb.recreation.gov/api/v1", "555AAQWSDDA348BF42E20F8988280535");
+
+          // pull the RIDB config from AppSettings
+          RIDBClient ridb = new RIDBClient();
+        </code>
+        <para>
+          In the latter example, the following AppSettings must be present in your configuration
+          for the RIDB client to work.  Here is an excerpt from a config file demonstrating how to set
+          the properties.
+        </para>
+        <code language="xml"><![CDATA[  
+          <configuration>
+            <appSettings>
+              <add key="RIDB.BaseUrl" value="https://ridb.recreation.gov/api/v1"/>
+              <add key="RIDB.ApiKey" value="555AAQWSDDA348BF42E20F8988280535"/>
+              <add key="RIDB.DebugOn" value="false"/>
+            </appSettings>
+          </configuration>
+        ]]>
+        </code>
+        <para>
+          Once the RIDBClient object is constructed, RIDB data is accessed by calling modules on that client object.  There are a total of
+          10 modules.  Each module corresponds to an entity within RIDB.
+        </para>
+        <para>Here are some examples of RIDB data being accessed by a few of the modules.</para>
+        <code language="cs">
+          // search for recreation areas with yellowstone in their data
+          var resultsPage = ridb.RecArea.Search(new RIDBSearchParameters() { Query="yellowstone" });
+          
+          // load a specific facility using its ID
+          var facility = ridb.Facility.Get(123123);
+          
+          // retrieve all recreation activities
+          var activities = ridb.Activity.GetAll();
+        </code>
+      </content>
+		</section>
+    <section>
+      <title>RIDB Client Modules</title>
+      <content>
+        <para>
+          The 10 RIDB client modules which can be used to access RIDB entities and associated entities are:
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Activity">T:NICBizDev.RIDB.RIDBClientModActivity</codeEntityReference> - Used to access RIDB activities.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Campsite">T:NICBizDev.RIDB.RIDBClientModCampsite</codeEntityReference> - Used to access RIDB campsites and associated data.
+            </para>
+          </listItem>
+          <listItem>
+              <para>
+                <codeEntityReference linkText="Event">T:NICBizDev.RIDB.RIDBClientModEvent</codeEntityReference> - Used to access RIDB events.
+              </para>
+            </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Facility">T:NICBizDev.RIDB.RIDBClientModFacility</codeEntityReference> - Used to access RIDB facilities along with the campsites, activities, media, and links associated with facilities.
+            </para>
+          </listItem>
+            <listItem>
+            <para>
+              <codeEntityReference linkText="Link">T:NICBizDev.RIDB.RIDBClientModLink</codeEntityReference> - Used to access RIDB links.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Media">T:NICBizDev.RIDB.RIDBClientModMedia</codeEntityReference> - Used to access RIDB multimedia objects.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Org">T:NICBizDev.RIDB.RIDBClientModOrg</codeEntityReference> - Used to access RIDB organizations and the facilities and recreation areas associated with those organizations.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="PermitEntrance">T:NICBizDev.RIDB.RIDBPermitEntrance</codeEntityReference> - Used to access RIDB permit entrances and associated data.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="RecArea">T:NICBizDev.RIDB.RIDBClientModRecArea</codeEntityReference> - Used to access RIDB recreationa areas plus the facilities, media, and links associated with recreation areas.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference linkText="Tour">T:NICBizDev.RIDB.RIDBClientModTour</codeEntityReference> - Used to access RIDB tours and associated data.
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+		<relatedTopics>
+			<link xlink:href="a86ac7f8-7a2b-4390-adbb-d83092754ec3" />
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NICBizDev.RIDB.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NamespaceDoc.cs" />
     <Compile Include="RIDBClientModActivity.cs" />
     <Compile Include="RIDBClientModCampsite.cs" />
     <Compile Include="RIDBClientModEvent.cs" />
@@ -70,16 +72,12 @@
     <Compile Include="RIDBEvent.cs" />
     <Compile Include="RIDBFacility.cs" />
     <Compile Include="RIDBFacilityAddress.cs" />
-    <Compile Include="RIDBFacilityEvent.cs" />
-    <Compile Include="RIDBOrgEntity.cs" />
     <Compile Include="RIDBPermitEntrance.cs" />
     <Compile Include="RIDBPermitEntranceZone.cs" />
     <Compile Include="RIDBPermittedEquipment.cs" />
     <Compile Include="RIDBRecArea.cs" />
     <Compile Include="RIDBRecAreaActivity.cs" />
     <Compile Include="RIDBRecAreaAddress.cs" />
-    <Compile Include="RIDBRecAreaEvent.cs" />
-    <Compile Include="RIDBRecAreaFacility.cs" />
     <Compile Include="RIDBActivity.cs" />
     <Compile Include="RIDBList.cs" />
     <Compile Include="RIDBSearchParameters.cs" />

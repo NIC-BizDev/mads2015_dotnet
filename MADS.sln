@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NICBizDev.RIDB", "NICBizDev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NICBizDev.RIDB.Tests", "NICBizDev.RIDB.Tests\NICBizDev.RIDB.Tests.csproj", "{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}"
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "NICBizDev.RIDB.Documentation", "NICBizDev.RIDB.Documentation\NICBizDev.RIDB.Documentation.shfbproj", "{AAF1F0E2-EECE-4189-8E21-7575A2B12FA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF8B0665-2D99-4284-9DE1-10B41E7EFA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF1F0E2-EECE-4189-8E21-7575A2B12FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF1F0E2-EECE-4189-8E21-7575A2B12FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF1F0E2-EECE-4189-8E21-7575A2B12FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF1F0E2-EECE-4189-8E21-7575A2B12FA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
