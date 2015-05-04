@@ -287,8 +287,8 @@ namespace NICBizDev.RIDB
             {
                 var page = pager(searchParams);
                 results.AddRange(page.Data);
-                atEnd = (results.Count >= page.MetaData.Results.TotalCount) || (page.MetaData.Results.CurrentCount == 0);
-                searchParams.Offset += page.MetaData.Results.CurrentCount;
+                atEnd = (results.Count >= page.Metadata.Results.TotalCount) || (page.Metadata.Results.CurrentCount == 0);
+                searchParams.Offset += page.Metadata.Results.CurrentCount;
             }
 
             return results.ToArray();

@@ -40,7 +40,7 @@ namespace NICBizDev.RIDB
         /// The metadata about the search that was performed.
         /// </summary>
         [DataMember(Name = "METADATA")]
-        public RIDBListMetdata MetaData { get; set; }
+        public RIDBListMetadata Metadata { get; set; }
 
         /// <summary>
         /// The number of data objects returned from the search.
@@ -59,7 +59,7 @@ namespace NICBizDev.RIDB
     /// The metadata returned from a search request.
     /// </summary>
     [DataContract(Name="METADATA")]
-    public class RIDBListMetdata
+    public class RIDBListMetadata
     {
         /// <summary>
         /// The search parameters used for the search.

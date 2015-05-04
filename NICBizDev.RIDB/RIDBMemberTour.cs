@@ -33,6 +33,6 @@ namespace NICBizDev.RIDB
         /// The id of the member tour.
         /// </summary>
         [DataMember]
-        public int MemberTourId { get; set; }
+        public int MemberTourID { get; set; }
     }
 }

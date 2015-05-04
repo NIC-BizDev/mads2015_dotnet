@@ -58,11 +58,12 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string PermitEntranceDescription { get; set; }
         
+        // RIDB BUG:  The field is misspelled in the data dictionary as "PermitEntranceAccesible"
         /// <summary>
         /// Details about the accessibility of the permit entrance.
         /// </summary>
         [DataMember]
-        public string PermitEntranceAccesible { get; set; }
+        public string PermitEntranceAccessible { get; set; }
         
         /// <summary>
         /// Latitude of the permit location.

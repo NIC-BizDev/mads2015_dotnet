@@ -64,11 +64,12 @@ namespace NICBizDev.RIDB
         [DataMember]
         public string TypeOfUse { get; set; }
         
+        // RIDB BUG:  The field CampsiteAccessible is misspelled as CampsiteAccesible in the data dictionary.
         /// <summary>
         /// Whether the campsite is handicap accessible.
         /// </summary>
         [DataMember]
-        public bool CampsiteAccesible { get; set; }
+        public bool CampsiteAccessible { get; set; }
         
         /// <summary>
         /// The date the campsite record was created.
